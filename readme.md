@@ -13,7 +13,7 @@ This application is build using Laravel 5.6. It enables users to submit orders t
 - run php artisan passport:install
 - run ./vendor/bin/phpunit to make sure everything is working :)
 
-###System Requirements 
+### System Requirements 
 	-PHP >= 7.1.3
 	-OpenSSL PHP Extension
 	-PDO PHP Extension
@@ -24,7 +24,7 @@ This application is build using Laravel 5.6. It enables users to submit orders t
 	-JSON PHP Extension
 	-MySQL
 
-##API Documentation & DEMO
+## API Documentation & DEMO
 https://orderingapi2.docs.apiary.io
 
 ## Security Vulnerabilities

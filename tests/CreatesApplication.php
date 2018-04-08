@@ -7,6 +7,7 @@ use Illuminate\Contracts\Console\Kernel;
 
 trait CreatesApplication
 {
+   
     /**
      * Creates the application.
      *
@@ -20,6 +21,8 @@ trait CreatesApplication
 
         Hash::driver('bcrypt')->setRounds(4);
 
+
         return $app;
     }
+
 }

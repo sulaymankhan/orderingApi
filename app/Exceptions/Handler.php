@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+  use Illuminate\Http\Exceptions\HttpResponseException;
 class Handler extends ExceptionHandler
 {
     /**
@@ -48,6 +49,23 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        $errors = $this->isJson( $exception->getMessage() ) ? json_decode( $exception->getMessage() ) : [ $exception->getMessage() ];
+
+        $response=['status'=>'error','errors'=>$errors];
+
+        $statusCode = method_exists($exception, 'getStatusCode') ? $exception->getStatusCode() : 400;
+        return response()->json($response, $statusCode );
         return parent::render($request, $exception);
     }
+
+
+    private function isJson($string){
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }
+
+
+
+
 }

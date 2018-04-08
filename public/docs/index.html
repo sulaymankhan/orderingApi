@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>general</h1>
+<!-- START_985d87fa04a157f2d8b59ef306bf6f06 -->
+<h2>Display a listing of the resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/orders" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/orders",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "status": "error",
+    "errors": [
+        "Call to a member function orders() on null"
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/orders</code></p>
+<p><code>HEAD api/v1/orders</code></p>
+<!-- END_985d87fa04a157f2d8b59ef306bf6f06 -->
+<!-- START_c79cb2035f69ac8078c2cec9fc2fab4a -->
+<h2>Store a newly created resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "http://localhost/api/v1/orders" \
+-H "Accept: application/json" \
+    -d "pickup_address_1"="et" \
+    -d "pickup_address_2"="et" \
+    -d "pickup_suburb"="et" \
+    -d "pickup_postcode"="3" \
+    -d "delivery_address_1"="et" \
+    -d "delivery_address_2"="et" \
+    -d "delivery_suburb"="et" \
+    -d "delivery_postcode"="339884" \
+</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/orders",
+    "method": "POST",
+    "data": {
+        "pickup_address_1": "et",
+        "pickup_address_2": "et",
+        "pickup_suburb": "et",
+        "pickup_postcode": 3,
+        "delivery_address_1": "et",
+        "delivery_address_2": "et",
+        "delivery_suburb": "et",
+        "delivery_postcode": 339884
+},
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/orders</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pickup_address_1</td>
+<td>string</td>
+<td>required</td>
+<td>Maximum: <code>190</code></td>
+</tr>
+<tr>
+<td>pickup_address_2</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>190</code></td>
+</tr>
+<tr>
+<td>pickup_suburb</td>
+<td>string</td>
+<td>required</td>
+<td>Maximum: <code>190</code></td>
+</tr>
+<tr>
+<td>pickup_postcode</td>
+<td>numeric</td>
+<td>required</td>
+<td>Maximum: <code>4</code></td>
+</tr>
+<tr>
+<td>delivery_address_1</td>
+<td>string</td>
+<td>required</td>
+<td>Maximum: <code>190</code></td>
+</tr>
+<tr>
+<td>delivery_address_2</td>
+<td>string</td>
+<td>optional</td>
+<td>Maximum: <code>:attribute</code></td>
+</tr>
+<tr>
+<td>delivery_suburb</td>
+<td>string</td>
+<td>required</td>
+<td>Maximum: <code>190</code></td>
+</tr>
+<tr>
+<td>delivery_postcode</td>
+<td>numeric</td>
+<td>required</td>
+<td>Maximum: <code>4</code></td>
+</tr>
+</tbody>
+</table>
+<!-- END_c79cb2035f69ac8078c2cec9fc2fab4a -->
+<!-- START_13f4a2ba5be2993e266a0acf8d3bd280 -->
+<h2>Display the specified resource.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://localhost/api/v1/orders/{order}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/v1/orders/{order}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">{
+    "status": "error",
+    "errors": [
+        "Unauthenticated."
+    ]
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/orders/{order}</code></p>
+<p><code>HEAD api/v1/orders/{order}</code></p>
+<!-- END_13f4a2ba5be2993e266a0acf8d3bd280 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

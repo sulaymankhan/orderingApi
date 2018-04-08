@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\ApiRequest;
 
-class OrderRequest extends FormRequest
+class GetOrdersRequest extends ApiRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +12,7 @@ class OrderRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return $this->user()->hasActiveAccount();
     }
 
     /**
@@ -24,7 +23,8 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "from"=>"date_format:d-m-Y",
+            "to"=>"date_format:d-m-Y"
         ];
     }
 }

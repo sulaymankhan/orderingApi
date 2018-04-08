@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('role');
-            $table->integer('rate_limit');
+            $table->boolean('account_status')->default(false);
+            $table->integer('rate_limit')->default(50);//50 requests per minute per user
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

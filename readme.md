@@ -12,6 +12,7 @@ This application is build using Laravel 5.6. It enables users to submit orders t
 - run php artisan migrate
 - run php artisan passport:install
 - run ./vendor/bin/phpunit to make sure everything is working :)
+- You can create an access token by going to console php artisan tinker -> App\User::first()->createToken('Api')->accessToken
 
 ### System Requirements 
 	-PHP >= 7.1.3
